@@ -1,0 +1,25 @@
+### server port
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Spring Boot 3, Keycloak, Webflux, R2DBC
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/default
+    username: postgres
+    password: password
+  flyway:
+    url: jdbc:postgresql://localhost:5432/default
+    user: ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+  ## keycloak via oidc-starter
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/MyRealm
+
+logging:
+  level:
+    jakub.dyi.keycloakreactivedb: debug
