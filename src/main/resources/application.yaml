@@ -13,7 +13,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/default
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
-  ## keycloak via oidc-starter
   security:
     oauth2:
       resourceserver:
